@@ -15,7 +15,7 @@ class CustomOnBoardFloatingBtn extends StatelessWidget {
         child: Container(
           height: 45,
           width: 45,
-          decoration: BoxDecoration(
+          decoration: const BoxDecoration(
             shape: BoxShape.circle,
             color: Colors.red,
           ),

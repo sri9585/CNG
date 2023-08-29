@@ -14,10 +14,11 @@ class Constraint {
   final String signIntoSignUp = 'Don\'t have an account?';
   final String signUptoSignIn = 'Already have an account?';
   final String signUp = 'Sign Up';
-  final String forgetPassword = 'Forgot Password';
+  final String forgetPassword = 'Forgot Password?';
   final String email = 'Email';
   final String emailExmp = 'example@gmail.com';
   final String password = 'Password';
+  final String or = 'or';
   final String passwordExmp = '***********';
   final String name = 'Name';
   final String nameExmp = 'John Doe';
