@@ -8,10 +8,20 @@ class CustomOnBoardFloatingBtn extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return FloatingActionButton(
-        elevation: 0,
-        backgroundColor: Color.fromRGBO(232, 28, 46, 1),
-        onPressed: onPressed,
-        child: child);
+    return Padding(
+      padding: const EdgeInsets.only(top: 10, left: 28.0),
+      child: GestureDetector(
+        onTap: onPressed,
+        child: Container(
+          height: 45,
+          width: 45,
+          decoration: BoxDecoration(
+            shape: BoxShape.circle,
+            color: Colors.red,
+          ),
+          child: Center(child: child),
+        ),
+      ),
+    );
   }
 }

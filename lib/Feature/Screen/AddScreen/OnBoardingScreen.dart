@@ -1,6 +1,7 @@
 import 'package:cng/Feature/Screen/AddScreen/ScreenOne.dart';
 import 'package:cng/Feature/Screen/AddScreen/ScreenThree.dart';
 import 'package:cng/Feature/Screen/AddScreen/ScreenTwo.dart';
+import 'package:cng/Feature/Screen/Auth/Login.dart';
 import 'package:cng/Feature/Widget/CustomOnboardFloatingButton.dart';
 import 'package:flutter/material.dart';
 import 'package:smooth_page_indicator/smooth_page_indicator.dart';
@@ -38,39 +39,36 @@ class _OnBoardingScreenState extends State<OnBoardingScreen> {
           Align(
             alignment: const Alignment(0, 0.75),
             child: Row(
-              mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+              mainAxisAlignment: MainAxisAlignment.center,
               crossAxisAlignment: CrossAxisAlignment.center,
               children: [
-                _skip
-                    ? CustomOnBoardFloatingBtn(
-                        onPressed: () {}, child: const Text('Skip'))
-                    : CustomOnBoardFloatingBtn(
-                        onPressed: () {
-                          _controller.previousPage(
-                              duration: const Duration(milliseconds: 500),
-                              curve: Curves.linear);
-                        },
-                        child: const Icon(Icons.arrow_back)),
                 SmoothPageIndicator(
                   controller: _controller, // PageController
                   count: 3,
-                  effect: const JumpingDotEffect(),
+                  effect: const JumpingDotEffect(
+                      verticalOffset: 10,
+                      dotColor: Colors.black12,
+                      activeDotColor: Colors.redAccent),
                 ),
                 _lastPage
                     ? CustomOnBoardFloatingBtn(
                         onPressed: () {
-                          _controller.nextPage(
-                              duration: const Duration(milliseconds: 500),
-                              curve: Curves.linear);
+                          Navigator.of(context).pushNamed(Login.route);
                         },
-                        child: const Text('done'))
+                        child: const Text(
+                          'done',
+                          style: TextStyle(color: Colors.white),
+                        ))
                     : CustomOnBoardFloatingBtn(
                         onPressed: () {
                           _controller.nextPage(
-                              duration: const Duration(milliseconds: 500),
+                              duration: const Duration(milliseconds: 250),
                               curve: Curves.linear);
                         },
-                        child: const Icon(Icons.arrow_forward)),
+                        child: const Icon(
+                          Icons.arrow_forward,
+                          color: Colors.white,
+                        )),
               ],
             ),
           )

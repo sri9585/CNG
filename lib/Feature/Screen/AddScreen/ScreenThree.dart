@@ -34,7 +34,7 @@ class _ScreenThreeState extends State<ScreenThree> {
             ),
           ),
           Text(
-            constraint.screenThreedisclaimer,
+            constraint.screenThreedisclaimer2,
             textAlign: TextAlign.center,
           ),
         ],
