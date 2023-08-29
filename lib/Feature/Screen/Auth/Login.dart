@@ -1,3 +1,5 @@
+import 'package:cng/Feature/Widget/CustomButtons/CustomElevatedButtons.dart';
+import 'package:cng/Feature/Widget/Format/CustomLoginFieldFormat.dart';
 import 'package:cng/constraint/Additional.dart';
 import 'package:flutter/material.dart';
 
@@ -11,7 +13,7 @@ class Login extends StatefulWidget {
 
 class _LoginState extends State<Login> {
   Constraint login = Constraint();
-
+  TextEditingController _emailController = TextEditingController();
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -35,18 +37,31 @@ class _LoginState extends State<Login> {
               style: TextStyle(
                   color: Colors.black.withOpacity(0.65),
                   fontSize: 16,
-                  //fontWeight: FontWeight.bold,
                   fontFamily: 'pop reg'),
             ),
-            Container(
-              alignment: Alignment.centerLeft,
-              child: Column(
-                children: [
-                  Text(
-                    login.email,
+            CustomLoginFieldFormat(email: _emailController),
+            CustomElevatedButton(onPressed: () {}, child: Text(login.signIn)),
+            Row(
+              mainAxisAlignment: MainAxisAlignment.center,
+              children: [
+                Padding(
+                  padding: const EdgeInsets.all(8.0),
+                  child: Container(
+                    color: Colors.black,
+                    height: 1,
+                    width: MediaQuery.of(context).size.height * 0.15,
                   ),
-                ],
-              ),
+                ),
+                Text(login.or),
+                Padding(
+                  padding: const EdgeInsets.all(8.0),
+                  child: Container(
+                    color: Colors.black,
+                    height: 1,
+                    width: MediaQuery.of(context).size.height * 0.15,
+                  ),
+                ),
+              ],
             )
           ],
         ),
