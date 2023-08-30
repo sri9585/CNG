@@ -28,4 +28,7 @@ class Constraint {
   final String termsandCondition = 'Terms & Condition';
   final String createAccount = 'Create Account';
   final String signUpinfo = 'Fill Your Information Below';
+  final String emailErrortxt = 'Please enter a valid email address';
+  final String passwordErrortxt =
+      'The password should be at least 8 characters long';
 }

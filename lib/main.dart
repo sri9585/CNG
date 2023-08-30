@@ -12,8 +12,8 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
-      home: OnBoardingScreen(),
-      onGenerateRoute: (settings) => OnRouteGenerator(settings),
+      home: const OnBoardingScreen(),
+      onGenerateRoute: (settings) => onRouteGenerator(settings),
     );
   }
 }

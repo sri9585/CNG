@@ -1,7 +1,7 @@
 import 'package:cng/Feature/Screen/Auth/Login.dart';
 import 'package:flutter/material.dart';
 
-Route<dynamic> OnRouteGenerator(RouteSettings settings) {
+Route<dynamic> onRouteGenerator(RouteSettings settings) {
   switch (settings.name) {
     case Login.route:
       return MaterialPageRoute(

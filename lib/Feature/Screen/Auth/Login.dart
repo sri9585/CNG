@@ -13,7 +13,8 @@ class Login extends StatefulWidget {
 
 class _LoginState extends State<Login> {
   Constraint login = Constraint();
-  TextEditingController _emailController = TextEditingController();
+  final TextEditingController _emailController = TextEditingController();
+  final TextEditingController _passwordController = TextEditingController();
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -39,8 +40,16 @@ class _LoginState extends State<Login> {
                   fontSize: 16,
                   fontFamily: 'pop reg'),
             ),
-            CustomLoginFieldFormat(email: _emailController),
-            CustomElevatedButton(onPressed: () {}, child: Text(login.signIn)),
+            CustomLoginFieldFormat(
+              email: _emailController,
+              password: _passwordController,
+            ),
+            CustomElevatedButton(
+                onPressed: () {
+                  print(_emailController.text);
+                  print(_passwordController.text);
+                },
+                child: Text(login.signIn)),
             Row(
               mainAxisAlignment: MainAxisAlignment.center,
               children: [

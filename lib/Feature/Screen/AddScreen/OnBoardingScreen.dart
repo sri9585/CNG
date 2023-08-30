@@ -53,7 +53,8 @@ class _OnBoardingScreenState extends State<OnBoardingScreen> {
                 _lastPage
                     ? CustomOnBoardFloatingBtn(
                         onPressed: () {
-                          Navigator.of(context).pushNamed(Login.route);
+                          Navigator.of(context)
+                              .pushReplacementNamed(Login.route);
                         },
                         child: const Text(
                           'done',

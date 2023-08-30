@@ -1,11 +1,14 @@
 import 'package:cng/Feature/Widget/CustomTextField/CustomLoginTextField.dart';
+import 'package:cng/Feature/Widget/CustomTextField/CustomPasswordTextField.dart';
 import 'package:cng/Feature/Widget/Util.dart';
 import 'package:cng/constraint/Additional.dart';
 import 'package:flutter/material.dart';
 
 class CustomLoginFieldFormat extends StatefulWidget {
   final TextEditingController email;
-  const CustomLoginFieldFormat({super.key, required this.email});
+  final TextEditingController password;
+  const CustomLoginFieldFormat(
+      {super.key, required this.email, required this.password});
 
   @override
   State<CustomLoginFieldFormat> createState() => _CustomLoginFieldFormatState();
@@ -37,8 +40,8 @@ class _CustomLoginFieldFormatState extends State<CustomLoginFieldFormat> {
               login.password,
             ),
           ),
-          CustomLoginEmailField(
-            email: widget.email,
+          CustomLoginPasswordField(
+            password: widget.password,
           ),
           GestureDetector(
             onTap: () {
