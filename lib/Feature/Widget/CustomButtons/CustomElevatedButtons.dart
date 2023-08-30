@@ -18,7 +18,7 @@ class CustomElevatedButton extends StatelessWidget {
             shape: RoundedRectangleBorder(
                 borderRadius: BorderRadius.circular(7.5)),
             backgroundColor: defaultColor,
-            minimumSize: const Size(250, 45)),
+            minimumSize: const Size(320, 50)),
         onPressed: onPressed,
         child: child,
       ),

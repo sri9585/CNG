@@ -1,5 +1,9 @@
 import 'package:cng/Feature/Widget/CustomButtons/CustomElevatedButtons.dart';
+import 'package:cng/Feature/Widget/Format/CustomChoice.dart';
+import 'package:cng/Feature/Widget/Format/CustomLoginContent.dart';
 import 'package:cng/Feature/Widget/Format/CustomLoginFieldFormat.dart';
+import 'package:cng/Feature/Widget/Format/SocialMediaAuth.dart';
+import 'package:cng/Feature/Widget/Util.dart';
 import 'package:cng/constraint/Additional.dart';
 import 'package:flutter/material.dart';
 
@@ -25,21 +29,7 @@ class _LoginState extends State<Login> {
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
-            Text(
-              login.signIn,
-              style: const TextStyle(
-                  fontSize: 22,
-                  fontWeight: FontWeight.bold,
-                  fontFamily: 'pop bold'),
-            ),
-            Text(
-              login.signInwelcome,
-              textAlign: TextAlign.center,
-              style: TextStyle(
-                  color: Colors.black.withOpacity(0.65),
-                  fontSize: 16,
-                  fontFamily: 'pop reg'),
-            ),
+            CustomLoginContent(),
             CustomLoginFieldFormat(
               email: _emailController,
               password: _passwordController,
@@ -50,26 +40,23 @@ class _LoginState extends State<Login> {
                   print(_passwordController.text);
                 },
                 child: Text(login.signIn)),
+            CustomChoice(),
+            const SocialMediaAuth(),
             Row(
               mainAxisAlignment: MainAxisAlignment.center,
               children: [
-                Padding(
-                  padding: const EdgeInsets.all(8.0),
-                  child: Container(
-                    color: Colors.black,
-                    height: 1,
-                    width: MediaQuery.of(context).size.height * 0.15,
-                  ),
+                Text(
+                  login.signIntoSignUp,
+                  style: const TextStyle(fontFamily: 'pop reg'),
                 ),
-                Text(login.or),
                 Padding(
-                  padding: const EdgeInsets.all(8.0),
-                  child: Container(
-                    color: Colors.black,
-                    height: 1,
-                    width: MediaQuery.of(context).size.height * 0.15,
+                  padding: const EdgeInsets.only(left: 2.5),
+                  child: Text(
+                    login.signUp,
+                    style: const TextStyle(
+                        color: defaultColor, fontFamily: 'pop med'),
                   ),
-                ),
+                )
               ],
             )
           ],
