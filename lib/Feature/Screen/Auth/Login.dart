@@ -1,3 +1,4 @@
+import 'package:cng/Feature/Screen/Auth/SignUp.dart';
 import 'package:cng/Feature/Widget/CustomButtons/CustomElevatedButtons.dart';
 import 'package:cng/Feature/Widget/Format/CustomChoice.dart';
 import 'package:cng/Feature/Widget/Format/CustomLoginContent.dart';
@@ -49,12 +50,17 @@ class _LoginState extends State<Login> {
                   login.signIntoSignUp,
                   style: const TextStyle(fontFamily: 'pop reg'),
                 ),
-                Padding(
-                  padding: const EdgeInsets.only(left: 2.5),
-                  child: Text(
-                    login.signUp,
-                    style: const TextStyle(
-                        color: defaultColor, fontFamily: 'pop med'),
+                GestureDetector(
+                  onTap: () {
+                    Navigator.pushNamed(context, SignUp.route);
+                  },
+                  child: Padding(
+                    padding: const EdgeInsets.only(left: 2.5),
+                    child: Text(
+                      login.signUp,
+                      style: const TextStyle(
+                          color: defaultColor, fontFamily: 'pop med'),
+                    ),
                   ),
                 )
               ],

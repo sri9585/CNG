@@ -1,4 +1,5 @@
 import 'package:cng/Feature/Screen/Auth/Login.dart';
+import 'package:cng/Feature/Screen/Auth/SignUp.dart';
 import 'package:flutter/material.dart';
 
 Route<dynamic> onRouteGenerator(RouteSettings settings) {
@@ -7,6 +8,11 @@ Route<dynamic> onRouteGenerator(RouteSettings settings) {
       return MaterialPageRoute(
         settings: settings,
         builder: (_) => const Login(),
+      );
+    case SignUp.route:
+      return MaterialPageRoute(
+        settings: settings,
+        builder: (_) => const SignUp(),
       );
     default:
       return MaterialPageRoute(
